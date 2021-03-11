@@ -14,7 +14,7 @@ export const StyledWrapper = styled.div`
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.7vw, 1.714rem);
   line-height: 33px;
   /* identical to box height */
 `
