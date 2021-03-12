@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StyledWrapper, HomepageLink } from './Navbar.elements'
-import DarkToggle from '../DarkToggle/DarkToggle'
+import { DarkToggle } from '../index'
 
 const Navbar = ({ themeToggler, theme }) => (
   <StyledWrapper>

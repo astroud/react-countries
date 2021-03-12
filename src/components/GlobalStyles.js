@@ -18,7 +18,10 @@ const GlobalStyle = createGlobalStyle`
     
     font-size: 87.5%;
 
-    --side-padding: clamp(1rem, 5.5vw, 5rem)
+    --side-padding: clamp(1rem, 5.5vw, 5rem);
+    --top-padding-filterable-country-list: clamp(1.714rem, 6.4vw, 3.428rem);
+    --input-height: clamp(3.429rem, 12.8vw, 4rem);
+    --padding-card-elements: 1.714rem;
   }
 
   body {

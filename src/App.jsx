@@ -2,6 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from './components/GlobalStyles'
 import { lightTheme, darkTheme } from './components/Themes'
+import FilterableCountryList from './components/FilterableCountryList/FilterableCountryList'
 import { useDarkMode, Navbar } from './components'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <Navbar themeToggler={themeToggler} theme={theme} />
+        <FilterableCountryList />
       </div>
     </ThemeProvider>
   )
