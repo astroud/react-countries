@@ -10,6 +10,7 @@ function App() {
   const [theme, themeToggler] = useDarkMode()
   const themeMode = theme === 'light' ? lightTheme : darkTheme
   const [countries, setCountries] = useState([])
+  const [filteredCountries, setFilteredCountries] = useState([])
 
   useEffect(() => {
     axios
@@ -19,12 +20,24 @@ function App() {
       })
   }, [])
 
+  const handleSearch = (event) => {
+    const countryFilter = event.target.value.toLocaleLowerCase()
+    const matchesTerm = (country) => (
+      country.name.toLowerCase().includes(countryFilter)
+    )
+
+    setFilteredCountries(countries.filter(matchesTerm))
+  }
+
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <div className="App">
         <Navbar themeToggler={themeToggler} theme={theme} />
-        <FilterableCountryList countries={countries} />
+        <FilterableCountryList
+          countries={filteredCountries}
+          handleSearch={handleSearch}
+        />
       </div>
     </ThemeProvider>
   )

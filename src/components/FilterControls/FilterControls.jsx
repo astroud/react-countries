@@ -1,18 +1,17 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import StyledWrapper from './FilterControls.elements'
 import { SearchBar, FilterDropdown } from '../index'
 
-const FilterControls = () => (
+const FilterControls = ({ handleSearch }) => (
   <StyledWrapper>
-    <SearchBar />
+    <SearchBar handleSearch={handleSearch} />
     <FilterDropdown />
   </StyledWrapper>
 )
 
-// FilterControls.propTypes = {
-//   themeToggler: PropTypes.func.isRequired,
-//   theme: PropTypes.string.isRequired,
-// }
+FilterControls.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+}
 
 export default FilterControls
