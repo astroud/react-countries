@@ -4,6 +4,12 @@ export const CardWrapper = styled.div`
   width: 18.857rem;
   height: 24rem;
   background: ${({ theme }) => theme.cardBackground};
+  margin-bottom: 1rem;
+`
+
+export const FlagWrapper = styled.div`
+  width: 100%;
+  height: 160px;
 `
 
 export const CountryName = styled.p`

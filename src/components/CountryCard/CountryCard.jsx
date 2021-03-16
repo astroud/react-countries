@@ -1,36 +1,41 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {
-  CardWrapper, CountryName, CountryDetails, Fact,
+  CardWrapper, FlagWrapper, CountryName, CountryDetails, Fact,
 } from './CountryCard.elements'
 
-const CountryCard = () => (
+const CountryCard = ({ country }) => (
   <CardWrapper>
-    <img src="https://restcountries.eu/data/col.svg" alt="flag" width="264" height="160" />
-    <CountryName>Figmantia</CountryName>
+    <FlagWrapper>
+      <img src={country.flag} alt={`${country.name}'s flag`} width="264" />
+    </FlagWrapper>
+    <CountryName>{ country.name }</CountryName>
     <CountryDetails>
       <Fact>
-        <strong>Population:</strong>
+        <strong>
+          Population:
+          {' '}
+        </strong>
         {' '}
-        81,770,900
+        {country.population}
       </Fact>
       <Fact>
         <strong>Region:</strong>
         {' '}
-        Europe
+        {country.region}
       </Fact>
       <Fact>
         <strong>Capital:</strong>
         {' '}
-        Berlin
+        {country.capital}
       </Fact>
     </CountryDetails>
   </CardWrapper>
 )
 
-// CountryCard.propTypes = {
-//   themeToggler: PropTypes.func.isRequired,
-//   theme: PropTypes.string.isRequired,
-// }
+CountryCard.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  country: PropTypes.object.isRequired,
+}
 
 export default CountryCard
