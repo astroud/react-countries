@@ -11,10 +11,11 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme
   const [countries, setCountries] = useState([])
   const [filteredCountries, setFilteredCountries] = useState([])
+  const fieldList = 'name;flag;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders'
 
   useEffect(() => {
     axios
-      .get('https://restcountries.eu/rest/v2/all')
+      .get(`https://restcountries.eu/rest/v2/all?fields=${fieldList}`)
       .then((response) => {
         setCountries(response.data)
       })
