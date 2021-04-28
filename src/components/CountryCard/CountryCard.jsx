@@ -1,35 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import {
   CardWrapper, FlagWrapper, CountryName, CountryDetails, Fact,
 } from './CountryCard.elements'
 
 const CountryCard = ({ country }) => (
-  <CardWrapper onClick={() => console.log('you clicked on', country)}>
-    <FlagWrapper>
-      <img src={country.flag} alt={`${country.name}'s flag`} width="264" />
-    </FlagWrapper>
-    <CountryName>{ country.name }</CountryName>
-    <CountryDetails>
-      <Fact>
-        <strong>
-          Population:
+  <CardWrapper>
+    <Link to={country.numericCode || ''}>
+      <FlagWrapper>
+        <img src={country.flag} alt={`${country.name}'s flag`} width="264" />
+      </FlagWrapper>
+      <CountryName>{ country.name }</CountryName>
+      <CountryDetails>
+        <Fact>
+          <strong>
+            Population:
+            {' '}
+          </strong>
           {' '}
-        </strong>
-        {' '}
-        {country.population}
-      </Fact>
-      <Fact>
-        <strong>Region:</strong>
-        {' '}
-        {country.region}
-      </Fact>
-      <Fact>
-        <strong>Capital:</strong>
-        {' '}
-        {country.capital}
-      </Fact>
-    </CountryDetails>
+          {country.population}
+        </Fact>
+        <Fact>
+          <strong>Region:</strong>
+          {' '}
+          {country.region}
+        </Fact>
+        <Fact>
+          <strong>Capital:</strong>
+          {' '}
+          {country.capital}
+        </Fact>
+      </CountryDetails>
+    </Link>
   </CardWrapper>
 )
 
