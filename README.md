@@ -1,3 +1,10 @@
+https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components
+
+- Styled components
+  - link to relevant articles and one of my examples
+- dark mode
+  - link to relevant articles and implementation details
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

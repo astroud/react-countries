@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
-// eslint-disable-next-line import/prefer-default-export
-export const useDarkMode = () => {
+const useDarkMode = () => {
   const [theme, setTheme] = useState('light')
 
   const setMode = (mode) => {
@@ -21,3 +20,5 @@ export const useDarkMode = () => {
   }, [])
   return [theme, themeToggler]
 }
+
+export default useDarkMode

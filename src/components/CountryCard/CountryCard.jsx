@@ -5,7 +5,7 @@ import {
 } from './CountryCard.elements'
 
 const CountryCard = ({ country }) => (
-  <CardWrapper>
+  <CardWrapper onClick={() => console.log('you clicked on', country)}>
     <FlagWrapper>
       <img src={country.flag} alt={`${country.name}'s flag`} width="264" />
     </FlagWrapper>
