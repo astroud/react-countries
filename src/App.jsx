@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { ThemeProvider } from 'styled-components'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import GlobalStyle from './components/GlobalStyles'
 import { lightTheme, darkTheme } from './components/Themes'
 import FilterableCountryList from './components/FilterableCountryList/FilterableCountryList'
@@ -54,26 +50,24 @@ function App() {
   }
 
   return (
-    <Router>
-      <ThemeProvider theme={themeMode}>
-        <GlobalStyle />
-        <div className="App">
-          <Navbar themeToggler={themeToggler} theme={theme} />
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyle />
+      <div className="App">
+        <Navbar themeToggler={themeToggler} theme={theme} />
 
-          <Switch>
-            <Route path="/:id">
-              <SingleCountry countries={filteredCountries} />
-            </Route>
-            <Route path="/">
-              <FilterableCountryList
-                countries={filteredCountries}
-                handleSearch={handleSearch}
-              />
-            </Route>
-          </Switch>
-        </div>
-      </ThemeProvider>
-    </Router>
+        <Switch>
+          <Route path="/:id">
+            <SingleCountry countries={filteredCountries} />
+          </Route>
+          <Route path="/">
+            <FilterableCountryList
+              countries={filteredCountries}
+              handleSearch={handleSearch}
+            />
+          </Route>
+        </Switch>
+      </div>
+    </ThemeProvider>
   )
 }
 
