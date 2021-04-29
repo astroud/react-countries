@@ -57,7 +57,11 @@ function App() {
 
         <Switch>
           <Route path="/:id">
-            <SingleCountry countries={filteredCountries} />
+            <SingleCountry
+              countries={filteredCountries}
+              themeToggler={themeToggler}
+              theme={theme}
+            />
           </Route>
           <Route path="/">
             <FilterableCountryList
