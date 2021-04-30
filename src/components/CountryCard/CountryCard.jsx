@@ -19,7 +19,7 @@ const CountryCard = ({ country }) => (
             {' '}
           </strong>
           {' '}
-          {country.population}
+          {country.population.toLocaleString()}
         </Fact>
         <Fact>
           <strong>Region:</strong>
