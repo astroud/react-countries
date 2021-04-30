@@ -5,11 +5,23 @@ export const CardWrapper = styled.div`
   height: 24rem;
   background: ${({ theme }) => theme.cardBackground};
   margin-bottom: 1rem;
+
+  a{
+    color: ${({ theme }) => theme.text};
+    text-decoration: none;
+  }
 `
 
 export const FlagWrapper = styled.div`
   width: 100%;
-  height: 160px;
+  height: 10rem;
+  max-height: 10rem;
+
+  img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+  }  
 `
 
 export const CountryName = styled.p`

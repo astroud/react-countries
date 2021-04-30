@@ -7,5 +7,7 @@ export { default as DarkToggle } from './DarkToggle/DarkToggle'
 export { default as FilterControls } from './FilterControls/FilterControls'
 export { default as FilterDropdown } from './FilterDropdown/FilterDropdown'
 export { default as SearchBar } from './SearchBar/SearchBar'
+// eslint-disable-next-line import/no-cycle
 export { default as SingleCountry } from './SingleCountry/SingleCountry'
 export { default as BackButton } from './BackButton/BackButton'
+export { default as CountryLink } from './CountryLink/CountryLink'

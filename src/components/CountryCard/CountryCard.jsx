@@ -9,7 +9,7 @@ const CountryCard = ({ country }) => (
   <CardWrapper>
     <Link to={country.numericCode || ''}>
       <FlagWrapper>
-        <img src={country.flag} alt={`${country.name}'s flag`} width="264" />
+        <img src={country.flag} alt={`${country.name}'s flag`} />
       </FlagWrapper>
       <CountryName>{ country.name }</CountryName>
       <CountryDetails>

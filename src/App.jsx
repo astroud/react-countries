@@ -29,7 +29,7 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme
   const [countries, setCountries] = useState([[blankCountry]])
   const [filteredCountries, setFilteredCountries] = useState([blankCountry])
-  const fieldList = 'name;flag;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders;numericCode'
+  const fieldList = 'name;flag;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders;numericCode;alpha3Code'
 
   useEffect(() => {
     axios
