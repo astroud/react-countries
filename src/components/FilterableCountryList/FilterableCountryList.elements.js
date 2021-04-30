@@ -7,7 +7,6 @@ export const StyledWrapper = styled.div`
 export const CardGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 3rem 1rem;
   
   & > div {
