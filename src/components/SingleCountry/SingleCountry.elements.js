@@ -2,8 +2,15 @@ import styled from 'styled-components'
 
 const smallScreen = '768px'
 
+export const CenteringWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
 export const CountryWrapper = styled.div`
   width: 100vw;
+  max-width: 110rem;
   padding: 0 5rem 0 5rem;
   margin-bottom: 5rem;
   display: flex;

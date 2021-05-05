@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { BackButton, CountryLink } from '../index'
 import {
   CountryWrapper, Wrapper, Flag, DetailsWrapper, Details, Detail, Label,
-  CountryName, BorderCountriesLabel,
+  CountryName, BorderCountriesLabel, CenteringWrapper,
 } from './SingleCountry.elements'
 
 const lookupName = (codes, countriesArray) => {
@@ -29,62 +29,64 @@ const SingleCountry = ({ countries, themeToggler, theme }) => {
   return (
     <>
       <BackButton themeToggler={themeToggler} theme={theme} />
-      <CountryWrapper>
-        <Flag src={country.flag} alt="" />
-        <Wrapper>
-          <CountryName>{country.name || ''}</CountryName>
-          <DetailsWrapper>
-            <Details>
-              <Detail>
-                <Label>Native Name: </Label>
-                {country.nativeName || ''}
+      <CenteringWrapper>
+        <CountryWrapper>
+          <Flag src={country.flag} alt="" />
+          <Wrapper>
+            <CountryName>{country.name || ''}</CountryName>
+            <DetailsWrapper>
+              <Details>
+                <Detail>
+                  <Label>Native Name: </Label>
+                  {country.nativeName || ''}
 
-              </Detail>
-              <Detail>
-                <Label>Population: </Label>
-                {country.population.toLocaleString() || ''}
+                </Detail>
+                <Detail>
+                  <Label>Population: </Label>
+                  {country.population.toLocaleString() || ''}
 
-              </Detail>
-              <Detail>
-                <Label>Region: </Label>
-                {country.region || ''}
+                </Detail>
+                <Detail>
+                  <Label>Region: </Label>
+                  {country.region || ''}
 
-              </Detail>
-              <Detail>
-                <Label>Sub Region: </Label>
-                {country.subregion || ''}
+                </Detail>
+                <Detail>
+                  <Label>Sub Region: </Label>
+                  {country.subregion || ''}
 
-              </Detail>
-              <Detail>
-                <Label>Capital: </Label>
-                {country.capital || ''}
+                </Detail>
+                <Detail>
+                  <Label>Capital: </Label>
+                  {country.capital || ''}
 
-              </Detail>
-            </Details>
-            <Details>
-              <Detail>
-                <Label>Top Level Domain: </Label>
-                {country.topLevelDomain || ''}
+                </Detail>
+              </Details>
+              <Details>
+                <Detail>
+                  <Label>Top Level Domain: </Label>
+                  {country.topLevelDomain || ''}
 
-              </Detail>
-              <Detail>
-                <Label>Currencies: </Label>
-                {currencies}
+                </Detail>
+                <Detail>
+                  <Label>Currencies: </Label>
+                  {currencies}
 
-              </Detail>
-              <Detail>
-                <Label>Languages: </Label>
-                {languages}
+                </Detail>
+                <Detail>
+                  <Label>Languages: </Label>
+                  {languages}
 
-              </Detail>
-            </Details>
-          </DetailsWrapper>
-          <BorderCountriesLabel>
-            <span>Border Countries:</span>
-            <CountryLink countryArray={borders} />
-          </BorderCountriesLabel>
-        </Wrapper>
-      </CountryWrapper>
+                </Detail>
+              </Details>
+            </DetailsWrapper>
+            <BorderCountriesLabel>
+              <span>Border Countries:</span>
+              <CountryLink countryArray={borders} />
+            </BorderCountriesLabel>
+          </Wrapper>
+        </CountryWrapper>
+      </CenteringWrapper>
     </>
   )
 }
