@@ -43,7 +43,7 @@ const SingleCountry = ({ countries, themeToggler, theme }) => {
                 </Detail>
                 <Detail>
                   <Label>Population: </Label>
-                  {country.population.toLocaleString() || ''}
+                  {country.population ? country.population.toLocaleString() : ''}
 
                 </Detail>
                 <Detail>
