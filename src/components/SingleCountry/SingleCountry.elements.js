@@ -1,30 +1,54 @@
 import styled from 'styled-components'
 
+const smallScreen = '768px'
+
 export const CountryWrapper = styled.div`
   width: 100vw;
   padding: 0 5rem 0 5rem;
   margin-bottom: 5rem;
   display: flex;
+
+  @media(max-width: ${smallScreen}) {
+    flex-wrap: wrap;
+  }
 `
 
 export const Flag = styled.img`
   width: 50%;
   max-height: 25rem;
   margin-right: 4.5rem;
+  object-fit: contain;
+  object-position: center top;
+  
+  @media(max-width: ${smallScreen}) {
+    width: 100%;
+  }
 `
 
 export const Wrapper = styled.div`
   width: 50%;
-  margin-left: 4.5rem;
+  padding-left: 2vw;
+
+  @media(max-width: ${smallScreen}) {
+    width: 100%;
+    padding-left: 0;
+  }
 `
 export const DetailsWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 `
 
 export const Details = styled.ul`
-  width: 50%;
-  float: left;
+  width: 45%;
+  margin-right: 5%;
+
+  @media(max-width: 1200px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
 `
 
 export const Detail = styled.li`
@@ -50,5 +74,14 @@ export const BorderCountriesLabel = styled.h2`
 
   span {
     margin-right: 1rem;
+  }
+
+  @media(max-width: ${smallScreen}) {
+    margin-top: 2.25rem;
+    
+    span {
+      display: block;
+      margin-bottom: 1rem;
+    }
   }
 `

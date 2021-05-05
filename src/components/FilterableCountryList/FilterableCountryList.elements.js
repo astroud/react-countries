@@ -7,15 +7,9 @@ export const StyledWrapper = styled.div`
 export const CardGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem 1rem;
-  
-  & > div {
-    /* margin-bottom: 5.357rem; */
-  }
+  justify-content: center;
 
-  & > * + * {
-    /* border: 1px solid red; */
-    /* margin-right: 5.357rem;
-    margin-bottom: 5.357rem; */
+  & > div {
+    margin-bottom: clamp(2.5rem, 10.7vw, 5.357rem);
   }
 `

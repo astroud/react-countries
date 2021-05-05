@@ -4,6 +4,8 @@ https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-c
   - link to relevant articles and one of my examples
 - dark mode
   - link to relevant articles and implementation details
+- react router
+- useHistory hook (for back button)
 
 # Getting Started with Create React App
 

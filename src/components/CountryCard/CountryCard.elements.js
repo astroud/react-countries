@@ -4,8 +4,8 @@ export const CardWrapper = styled.div`
   width: 18.857rem;
   height: 24rem;
   background: ${({ theme }) => theme.cardBackground};
-  margin-bottom: 1rem;
-
+  margin: 0 1.5rem 1rem 1.5rem;
+  
   a{
     color: ${({ theme }) => theme.text};
     text-decoration: none;

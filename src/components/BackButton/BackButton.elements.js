@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+const smallScreen = '768px'
+
 const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -23,6 +25,10 @@ const Button = styled.button`
 
   > svg {
     padding-right: 0.625rem;
+  }
+
+  @media(max-width: ${smallScreen}) {
+    margin: 2.5rem 0 4rem 5rem;
   }
 `
 
