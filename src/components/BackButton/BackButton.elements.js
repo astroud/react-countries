@@ -8,7 +8,7 @@ const Button = styled.button`
   align-items: center;
   background: ${({ theme }) => theme.BackButtonBackground};
   color: ${({ theme }) => theme.navbarText};
-  border-radius: 6px;
+  border-radius: 0.375rem;
   border: none;
   padding: 0.625rem 2rem 0.625rem;
   margin: 5rem 0 5rem 5rem;

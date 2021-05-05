@@ -9,8 +9,8 @@ const RegionDropdown = styled.input`
 
 
   border: none;
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-  border-radius: 5px;
+  box-shadow: 0px 0.125rem 0.5625rem rgba(0, 0, 0, 0.0532439);
+  border-radius: 0.3125rem;
 
   font-size: 0.857rem;
   width: 14.286rem;

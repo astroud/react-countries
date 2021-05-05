@@ -9,13 +9,13 @@ export const StyledWrapper = styled.div`
   padding: 0 var(--side-padding) 0 var(--side-padding);
 
   background: ${({ theme }) => theme.navbarBackground};
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.0562443);
 
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 800;
   font-size: clamp(1rem, 2.7vw, 1.714rem);
-  line-height: 33px;
+  line-height: 2.0625rem;
   /* identical to box height */
 `
 
