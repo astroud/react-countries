@@ -16,9 +16,6 @@ border-radius: 0.3125rem;
 
 export const RegionDropdown = styled.button`
   background-color: ${({ theme }) => theme.searchbarBackground};
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='expand-more'%3E%3Cpath id='Shape' fill-rule='evenodd' clip-rule='evenodd' d='M8.45 1.45L5 4.9L1.55 1.45L0.5 2.5L5 7L9.5 2.5L8.45 1.45Z' fill='${({ theme }) => theme.text}'/%3E%3C/g%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
   color: ${({ theme }) => theme.navbarText};
   margin-bottom: .25rem;
   border: none;
@@ -34,9 +31,20 @@ export const RegionDropdown = styled.button`
   cursor: pointer;
 
   &:hover {
-    filter: contrast(97%);
-    transition: filter .25s ease-in-out;
+    svg {
+        transform: translateY(0.25rem);
+        transition: transform 0.3s ease 0s;
+
+    }
   }
+
+  svg {
+    float: right; 
+  }
+
+  &[aria-expanded="true"] svg {
+    transform: rotate(-180deg);
+  }  
 `
 
 export const CountryFilterLabel = styled.label.attrs({
