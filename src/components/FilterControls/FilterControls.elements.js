@@ -6,6 +6,7 @@ const StyledWrapper = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding-bottom: 0.571rem;
+  margin-bottom: 2rem;
 `
 
 export default StyledWrapper
