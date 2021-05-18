@@ -29,9 +29,11 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme
   const [countries, setCountries] = useState([[blankCountry]])
   const [filteredCountries, setFilteredCountries] = useState([blankCountry])
-  const fieldList = 'name;flag;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders;numericCode;alpha3Code'
+  const [regionFilter, setRegionFilter] = useState('')
+  const [countryFilter, setCountryFilter] = useState('')
 
   useEffect(() => {
+    const fieldList = 'name;flag;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders;numericCode;alpha3Code'
     axios
       .get(`https://restcountries.eu/rest/v2/all?fields=${fieldList}`)
       .then((response) => {
@@ -40,13 +42,28 @@ function App() {
       })
   }, [])
 
-  const handleSearch = (event) => {
-    const countryFilter = event.target.value.toLocaleLowerCase()
-    const matchesTerm = (country) => (
-      country.name.toLowerCase().includes(countryFilter)
-    )
+  useEffect(() => {
+    if (countries.length > 1) {
+      const matchesTerm = (country) => (
+        country.name.toLowerCase().includes(countryFilter)
+      )
 
-    setFilteredCountries(countries.filter(matchesTerm))
+      if (regionFilter === '') {
+        setFilteredCountries(countries.filter(matchesTerm))
+      } else {
+        setFilteredCountries(
+          countries.filter((country) => country.region === regionFilter).filter(matchesTerm),
+        )
+      }
+    }
+  }, [countries, countryFilter, regionFilter])
+
+  const handleSearch = (event) => {
+    setCountryFilter(event.target.value.toLocaleLowerCase())
+  }
+
+  const handleRegionFilter = (e) => {
+    setRegionFilter(e.target.getAttribute('id'))
   }
 
   return (
@@ -67,6 +84,8 @@ function App() {
             <FilterableCountryList
               countries={filteredCountries}
               handleSearch={handleSearch}
+              handleRegionFilter={handleRegionFilter}
+              regionFilter={regionFilter}
             />
           </Route>
         </Switch>

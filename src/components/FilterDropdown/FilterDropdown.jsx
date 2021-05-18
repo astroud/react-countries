@@ -5,7 +5,7 @@ import {
   DropdownWrapper, RegionDropdown, FilterOptions, CountryFilter, CountryFilterLabel,
 } from './FilterDropdown.elements'
 
-const FilterDropdown = ({ buttonText }) => {
+const FilterDropdown = ({ buttonText, handleRegionFilter, regionFilter }) => {
   const dropdownRef = useRef(null)
   const [showMenu, setShowMenu] = useState(false)
 
@@ -34,19 +34,19 @@ const FilterDropdown = ({ buttonText }) => {
 
   return (
     <DropdownWrapper>
-      <RegionDropdown onClick={handleClick}>{buttonText}</RegionDropdown>
+      <RegionDropdown onClick={handleClick}>{regionFilter === '' ? buttonText : `Filtering for ${regionFilter}`}</RegionDropdown>
       { showMenu
         ? (
           <FilterOptions ref={dropdownRef} hidden={showMenu}>
-            <CountryFilter id="Africa" name="Africa" />
+            <CountryFilter id="Africa" name="Africa" checked={regionFilter === 'Africa'} onChange={handleRegionFilter} />
             <CountryFilterLabel htmlFor="Africa">Africa</CountryFilterLabel>
-            <CountryFilter id="America" name="America" />
-            <CountryFilterLabel htmlFor="America">America</CountryFilterLabel>
-            <CountryFilter id="Asia" name="Asia" />
+            <CountryFilter id="Americas" name="Americas" checked={regionFilter === 'Americas'} onChange={handleRegionFilter} />
+            <CountryFilterLabel htmlFor="Americas">Americas</CountryFilterLabel>
+            <CountryFilter id="Asia" name="Asia" checked={regionFilter === 'Asia'} onChange={handleRegionFilter} />
             <CountryFilterLabel htmlFor="Asia">Asia</CountryFilterLabel>
-            <CountryFilter id="Europe" name="Europe" />
+            <CountryFilter id="Europe" name="Europe" checked={regionFilter === 'Europe'} onChange={handleRegionFilter} />
             <CountryFilterLabel htmlFor="Europe">Europe</CountryFilterLabel>
-            <CountryFilter id="Oceania" name="Oceania" />
+            <CountryFilter id="Oceania" name="Oceania" checked={regionFilter === 'Oceania'} onChange={handleRegionFilter} />
             <CountryFilterLabel htmlFor="Oceania">Oceania</CountryFilterLabel>
           </FilterOptions>
         )
@@ -57,6 +57,8 @@ const FilterDropdown = ({ buttonText }) => {
 
 FilterDropdown.propTypes = {
   buttonText: PropTypes.string,
+  handleRegionFilter: PropTypes.func.isRequired,
+  regionFilter: PropTypes.string.isRequired,
 }
 
 FilterDropdown.defaultProps = {
