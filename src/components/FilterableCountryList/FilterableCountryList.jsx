@@ -9,7 +9,23 @@ import CardLoader from '../CountryCard/CardLoader.jsx'
 const FilterableCountryList = ({
   countries, handleSearch, handleRegionFilter, regionFilter,
 }) => {
-  if (countries.length === 1) {
+  if (countries.length === 0) {
+    return (
+      <StyledWrapper>
+        <FilterControls
+          handleSearch={handleSearch}
+          handleRegionFilter={handleRegionFilter}
+          regionFilter={regionFilter}
+        />
+        <CardGrid>
+          <h2>No countries match your filters.</h2>
+        </CardGrid>
+      </StyledWrapper>
+    )
+  }
+
+  // Only show CardLoaders when countries has not been populated via api
+  if (countries[0].name === '') {
     return (
       <StyledWrapper>
         <FilterControls
