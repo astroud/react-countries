@@ -19,6 +19,11 @@ const FilterableCountryList = ({
         />
         <CardGrid>
           <CardLoader />
+          <CardLoader />
+          <CardLoader />
+          <CardLoader />
+          <CardLoader />
+          <CardLoader />
         </CardGrid>
       </StyledWrapper>
     )
