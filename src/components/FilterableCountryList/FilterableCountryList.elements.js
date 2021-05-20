@@ -7,9 +7,6 @@ export const StyledWrapper = styled.div`
 export const CardGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
-  & > div {
-    margin-bottom: clamp(2.5rem, 10.7vw, 5.357rem);
-  }
+  justify-content: space-between;
+  gap: 4.6875rem;
 `
