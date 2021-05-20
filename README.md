@@ -6,7 +6,7 @@ A [Frontend Mentor](https://www.frontendmentor.io) challenge using the [REST Cou
 
 [View Site](https://react-countries-ten.vercel.app)
 
-![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
+[![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)](https://react-countries-ten.vercel.app)
 
 ## Features
 
