@@ -19,4 +19,5 @@ You can:
 - Filter countries by region
 - Click on a country card to see more detailed information
 - Navigate countries using a country's border countries links
+- Back button mirrors browser's back button behavior
 - Toggle between light and darkmode. Browser remembers your preference (TODO: Fix initial flash when using darkmode)
