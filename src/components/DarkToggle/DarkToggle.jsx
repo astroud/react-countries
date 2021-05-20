@@ -15,8 +15,8 @@ const displaySVG = (theme) => {
 }
 
 const DarkToggle = ({ themeToggler, theme }) => {
-  const [playOnSfx] = useSound(onSfx)
-  const [playOffSfx] = useSound(offSfx)
+  const [playOnSfx] = useSound(onSfx, { volume: 0.02 })
+  const [playOffSfx] = useSound(offSfx, { volume: 0.02 })
 
   return (
     <StyledWrapper>
