@@ -21,4 +21,5 @@ You can:
 - Navigate countries using a country's border countries links
 - Back button mirrors browser's back button behavior
 - Toggle between light and darkmode. Browser remembers your preference (TODO: Fix initial flash when using darkmode)
+- Toggling theme modes triggers light on or off sound effects
 - Displays country card loaders during initial API call
